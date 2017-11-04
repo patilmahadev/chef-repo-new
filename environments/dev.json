@@ -1,0 +1,9 @@
+{
+  "name": "dev",
+  "default_attributes": {
+    "apache": {
+      "index": "dev.html",
+      "doc_root": "/var/www/html"
+    }
+  }
+}

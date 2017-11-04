@@ -1,0 +1,9 @@
+{
+  "name": "prod",
+  "default_attributes": {
+    "apache": {
+      "index": "prod.html",
+      "doc_root": "/var/www/html"
+    }
+  }
+}
