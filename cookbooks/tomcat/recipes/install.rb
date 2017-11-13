@@ -13,6 +13,14 @@ if node['os'] == 'linux'
   tomcat_pkg = File.basename(URI.parse(node['tomcat']['tar_source']).path)
   tomcat_dir = tomcat_pkg[/apache-tomcat-\d+\.\d+\.\d+/]
 
+  directory node['tomcat']['root_dir'] do
+    owner 'root'
+    group 'root'
+    mode '0755'
+    recursive true
+    action :create
+  end
+  
   remote_file "#{node['tomcat']['root_dir']}/#{tomcat_pkg}" do
     source node['tomcat']['tar_source']
     owner 'root'
